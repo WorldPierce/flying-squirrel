@@ -4,10 +4,12 @@ function Squrriel() {
 	this.gravity = 0.6;
 	this.lift = -15;
 	this.velocity = 0;
+	this.img = loadImage("images/sq.png");
 
 	this.show = function() {
-		fill(255);
-		ellipse(this.x, this.y, 32, 32);
+		// fill(255);
+		// ellipse(this.x, this.y, 32, 32);
+		image(this.img, this.x, this.y, 35, 35);
 	}
 
 	this.up = function() {
@@ -28,5 +30,9 @@ function Squrriel() {
 			this.y = 0;
 			this.velocity = 0;
 		}
+	}
+
+	this.glide = function() {
+		this.velocity += -0.6;
 	}
 }
